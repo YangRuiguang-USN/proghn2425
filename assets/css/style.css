@@ -1,0 +1,33 @@
+html {
+    background-color: #FFB6C1;
+    font-size: 14px;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+div#page {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #333;
+}
+
+div.entete {
+    text-align: center;
+}
+
+div#aboutme {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
