@@ -1,5 +1,6 @@
 html {
     background-color: #FFB6C1;
+    background-image: url("assets/img/background.png")
     font-size: 14px;
     width: 100vw;
 }
@@ -21,6 +22,17 @@ div#page {
 
 div.entete {
     text-align: center;
+}
+
+.column {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    margin: 10px 0;
+    border-collapse: collapse;
 }
 
 div#aboutme {
