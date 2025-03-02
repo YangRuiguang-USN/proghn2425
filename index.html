@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Page Personnelle - YANG Ruiguang</title>
         <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/script.js"></script>
     </head>
     <body>
     	<div id="page">
@@ -42,6 +43,30 @@
         			</ol>
         		</div>
         	</div>
+        	
+        	<div class="interaction">
+   	 			<div>
+      		  		<label for="nomUtilisateur">Comment vous appelez-vous ? </label>
+        			<input type="text" id="nomUtilisateur">
+        			<button id="boutonBonjour">Bonjour...</button>
+    			</div>
+    
+    			<div>
+        			<button id="boutonAide">Afficher l'aide</button>
+    			</div>
+    
+    			<div id="sectionAide">
+        			<h3>Aide</h3>
+        			<p>Ici, on va afficher l'aide.</p>
+        
+        			<div>
+            			<label for="fichierInput">Sélectionner un fichier au format .txt : </label>
+            			<input type="file" id="fichierInput" accept=".txt">
+            			<button onclick="selectionnerFichier()">Parcourir...</button>
+            			<span id="messageSelection">Aucun fichier sélectionné.</span>
+        			</div>
+    			</div>
+			</div>
         	
 			<footer>
   				<p><a href="http://www.univ-paris3.fr/">Lien vers le site de Sorbonne Nouvelle.</a></p>
