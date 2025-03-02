@@ -106,3 +106,26 @@ input[type="text"], input[type="file"] {
     padding: 5px;
     margin-right: 5px;
 }
+
+.fichier-selection {
+    margin: 10px 0;
+    padding: 5px 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+#messageSelection {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+#fichierInput {
+    display: none;
+}
+
+.fichier-selection button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}

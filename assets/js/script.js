@@ -45,8 +45,14 @@ function toggleAide() {
     aideVisible = !aideVisible;
 }
 
-// Fonction pour la sélection de fichier
+// Fonction pour la sélection de fichier - modifiée pour activer le fichier input caché
 function selectionnerFichier() {
+    // Cliquer sur l'input de fichier caché
+    document.getElementById("fichierInput").click();
+}
+
+// Fonction pour mettre à jour l'affichage du nom de fichier
+function mettreAJourNomFichier() {
     // Récupérer les éléments
     let fichierInput = document.getElementById("fichierInput");
     let messageSelection = document.getElementById("messageSelection");
@@ -72,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let boutonAide = document.getElementById("boutonAide");
     boutonAide.addEventListener("click", toggleAide);
     
+    // Pour le fichier input, utiliser l'événement 'change' au lieu du onclick
     let fichierInput = document.getElementById("fichierInput");
-    fichierInput.addEventListener("change", selectionnerFichier);
+    fichierInput.addEventListener("change", mettreAJourNomFichier);
+    
+    // S'assurer que le message de sélection est initialisé
+    document.getElementById("messageSelection").textContent = "Aucun fichier sélectionné.";
 });

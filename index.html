@@ -55,16 +55,16 @@
         			<button id="boutonAide">Afficher l'aide</button>
     			</div>
     
+                <div class="fichier-selection">
+                    Sélectionner un fichier au format .txt : 
+                    <button onclick="selectionnerFichier()">Parcourir...</button>
+                    <span id="messageSelection">Aucun fichier sélectionné.</span>
+                    <input type="file" id="fichierInput" accept=".txt" style="display: none;">
+                </div>
+                
     			<div id="sectionAide">
         			<h3>Aide</h3>
         			<p>Ici, on va afficher l'aide.</p>
-        
-        			<div>
-            			<label for="fichierInput">Sélectionner un fichier au format .txt : </label>
-            			<input type="file" id="fichierInput" accept=".txt">
-            			<button onclick="selectionnerFichier()">Parcourir...</button>
-            			<span id="messageSelection">Aucun fichier sélectionné.</span>
-        			</div>
     			</div>
 			</div>
         	
