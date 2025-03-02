@@ -89,39 +89,35 @@ footer {
     margin-top: 10px;
 }
 
-#sectionAide {
-    background-color: #f0f0f0;
-    padding: 15px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
-}
-
 button {
     padding: 5px 10px;
     margin: 5px;
     cursor: pointer;
 }
 
-input[type="text"], input[type="file"] {
-    padding: 5px;
-    margin-right: 5px;
+#sectionAide {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none; 
 }
 
 .fichier-selection {
-    margin: 10px 0;
-    padding: 5px 0;
     background-color: #f0f0f0;
-    border: 1px solid #ccc;
     padding: 15px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+#fichierInput {
+    display: none;
 }
 
 #messageSelection {
     margin-left: 5px;
     display: inline-block;
-}
-
-#fichierInput {
-    display: none;
 }
 
 .fichier-selection button {

@@ -51,20 +51,6 @@ function selectionnerFichier() {
     document.getElementById("fichierInput").click();
 }
 
-// Fonction pour mettre à jour l'affichage du nom de fichier
-function mettreAJourNomFichier() {
-    // Récupérer les éléments
-    let fichierInput = document.getElementById("fichierInput");
-    let messageSelection = document.getElementById("messageSelection");
-    
-    // Afficher le nom du fichier ou un message
-    if (fichierInput.files.length > 0) {
-        messageSelection.textContent = fichierInput.files[0].name;
-    } else {
-        messageSelection.textContent = "Aucun fichier sélectionné.";
-    }
-}
-
 // Initialiser les éléments au chargement de la page
 document.addEventListener("DOMContentLoaded", function() {
     // Cacher la section d'aide au démarrage
@@ -78,10 +64,14 @@ document.addEventListener("DOMContentLoaded", function() {
     let boutonAide = document.getElementById("boutonAide");
     boutonAide.addEventListener("click", toggleAide);
     
-    // Pour le fichier input, utiliser l'événement 'change' au lieu du onclick
+    // Pour le fichier input
     let fichierInput = document.getElementById("fichierInput");
-    fichierInput.addEventListener("change", mettreAJourNomFichier);
-    
-    // S'assurer que le message de sélection est initialisé
-    document.getElementById("messageSelection").textContent = "Aucun fichier sélectionné.";
+    fichierInput.addEventListener("change", function() {
+        let messageSelection = document.getElementById("messageSelection");
+        if (fichierInput.files.length > 0) {
+            messageSelection.textContent = fichierInput.files[0].name;
+        } else {
+            messageSelection.textContent = "Aucun fichier sélectionné.";
+        }
+    });
 });
