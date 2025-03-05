@@ -44,29 +44,22 @@
         		</div>
         	</div>
         	
-        	<div class="interaction">
-   	 			<div>
-      		  		<label for="nomUtilisateur">Comment vous appelez-vous ? </label>
-        			<input type="text" id="nomUtilisateur">
-        			<button id="boutonBonjour">Bonjour...</button>
-    			</div>
-    
-    			<div>
-        			<button id="boutonAide">Afficher l'aide</button>
-    			</div>
-    			
-    			<div id="sectionAide">
-        			<h3>Aide</h3>
-        			<p>Ici, on va afficher l'aide.</p>
-    			</div>
-    
-                <div class="fichier-selection">
-                    Sélectionner un fichier au format .txt : 
-                    <button onclick="selectionnerFichier()">Parcourir...</button>
-                    <span id="messageSelection">Aucun fichier sélectionné.</span>
-                    <input type="file" id="fichierInput" accept=".txt" style="display: none;">
-                </div>
-			</div>
+        	<form>
+                <label for="bonjour-form-nom">Comment vous appelez-vous ?</label>
+                <input id="bonjour-form-nom" type="text" placeholder="Votre nom svp" />
+                <input type="submit" value="Bonjour..." onclick="demanderNom(); return false;" />
+            </form>
+            
+            <div id="help">
+                <button id="help-button" onclick="ShowHideHelp()">Afficher l'aide</button>
+                <div id="help-placeholder"></div>
+            </div>
+            
+            <form>
+                <label for="fileInput" class="btn"><small>Sélectionner un fichier au format .txt :</small></label>
+                <input id="fileInput" type="file" accept=".txt" name="Fichier (.txt)" onchange="lireFichier()" />
+            </form>
+            <div id="fileDisplayArea"></div>
         	
 			<footer>
   				<p><a href="http://www.univ-paris3.fr/">Lien vers le site de Sorbonne Nouvelle.</a></p>

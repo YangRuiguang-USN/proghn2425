@@ -1,7 +1,26 @@
+// Fonction pour afficher ou cacher l'aide
+function ShowHideHelp() {
+    let helpZone = document.getElementById("help-placeholder");
+    let helpButton = document.getElementById("help-button");
+    let contenu = "";
+    let texteBouton = "";
+    
+    if (helpZone.innerHTML === "") {
+        contenu += "<h3>Aide</h3>";
+        contenu += "<p>Ici, on va afficher l'aide.</p>";
+        texteBouton = "Cacher l'aide";
+    } else {
+        texteBouton = "Afficher l'aide";
+    }
+    
+    helpZone.innerHTML = contenu;
+    helpButton.innerHTML = texteBouton;
+}
+
 // Fonction pour demander le nom et afficher un message de bienvenue
 function demanderNom() {
     // Récupérer le nom saisi
-    let nom = document.getElementById("nomUtilisateur").value;
+    let nom = document.getElementById("bonjour-form-nom").value;
     
     // Créer une boîte de dialogue
     let boiteDialogue = document.createElement("div");
@@ -23,55 +42,21 @@ function demanderNom() {
     });
 }
 
-// Variable pour suivre l'état de la section d'aide
-let aideVisible = false;
 
-// Fonction pour afficher ou cacher l'aide
-function toggleAide() {
-    // Récupérer la section d'aide
-    let sectionAide = document.getElementById("sectionAide");
-    let boutonAide = document.getElementById("boutonAide");
+// Fonction lireFichier d'après l'image originale, mais adaptée pour fonctionner avec onchange
+function lireFichier() {
+    let fileInput = document.getElementById('fileInput');
+    let fileDisplayArea = document.getElementById('fileDisplayArea');
     
-    // Changer l'affichage
-    if (aideVisible) {
-        sectionAide.style.display = "none";
-        boutonAide.textContent = "Afficher l'aide";
+    let file = fileInput.files[0];
+    let textType = /text.*/;
+    
+    if (file.type.match(textType)) {
+        let reader = new FileReader();
+        reader.onload = function(e) { fileDisplayArea.innerText = reader.result; }
+        reader.readAsText(file);
     } else {
-        sectionAide.style.display = "block";
-        boutonAide.textContent = "Cacher l'aide";
+        alert("File not supported!");
     }
-    
-    // Inverser l'état
-    aideVisible = !aideVisible;
 }
 
-// Fonction pour la sélection de fichier - modifiée pour activer le fichier input caché
-function selectionnerFichier() {
-    // Cliquer sur l'input de fichier caché
-    document.getElementById("fichierInput").click();
-}
-
-// Initialiser les éléments au chargement de la page
-document.addEventListener("DOMContentLoaded", function() {
-    // Cacher la section d'aide au démarrage
-    let sectionAide = document.getElementById("sectionAide");
-    sectionAide.style.display = "none";
-    
-    // Ajouter des événements aux boutons
-    let boutonBonjour = document.getElementById("boutonBonjour");
-    boutonBonjour.addEventListener("click", demanderNom);
-    
-    let boutonAide = document.getElementById("boutonAide");
-    boutonAide.addEventListener("click", toggleAide);
-    
-    // Pour le fichier input
-    let fichierInput = document.getElementById("fichierInput");
-    fichierInput.addEventListener("change", function() {
-        let messageSelection = document.getElementById("messageSelection");
-        if (fichierInput.files.length > 0) {
-            messageSelection.textContent = fichierInput.files[0].name;
-        } else {
-            messageSelection.textContent = "Aucun fichier sélectionné.";
-        }
-    });
-});
