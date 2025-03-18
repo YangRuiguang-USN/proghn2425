@@ -122,3 +122,18 @@ input[type="submit"], button {
     cursor: pointer;
 }
 
+/* Style pour l'exercice */
+.exercice-section {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+#exerciceResultat {
+    margin-top: 10px;
+}
+
+#exerciceResultat table {
+    margin: 10px 0;
+}

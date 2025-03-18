@@ -60,6 +60,15 @@
                 <input id="fileInput" type="file" accept=".txt" name="Fichier (.txt)" onchange="lireFichier()" />
             </form>
             <div id="fileDisplayArea"></div>
+            
+            <div class="exercice-section">
+    			<h3>Exercice - Segmentation de texte</h3>
+    			<p>Entrez un texte qui sera découpé en mots :</p>
+    			<textarea id="texteExercice" rows="5" cols="50">Ceci est un exemple de texte à découper en mots.</textarea>
+    			<br>
+    			<button onclick="exercice()">Créer le tableau de mots</button>
+    			<div id="exerciceResultat"></div>
+			</div>
         	
 			<footer>
   				<p><a href="http://www.univ-paris3.fr/">Lien vers le site de Sorbonne Nouvelle.</a></p>

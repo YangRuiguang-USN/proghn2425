@@ -60,3 +60,39 @@ function lireFichier() {
     }
 }
 
+// Fonction pour l'exercice  - Découper le texte en mots et afficher dans un tableau
+function exercice() {
+    // Récupérer le texte saisi
+    let texte = document.getElementById("texteExercice").value;
+    
+    // Découper le texte en mots
+    let tokens = texte.split(" ");
+    
+    // Créer un tableau HTML
+    let table = document.createElement("table");
+    
+    // Ajouter une bordure au tableau
+    table.setAttribute("border", "1");
+    
+    // Utiliser forEach pour parcourir chaque mot
+    tokens.forEach(mot => {
+        // Créer une ligne pour chaque mot
+        let row = document.createElement("tr");
+        // Définir le contenu de la ligne
+        row.innerHTML = mot;
+        // Ajouter la ligne au tableau
+        table.appendChild(row);
+    });
+    
+    // Vider d'abord la zone de résultat
+    let resultatDiv = document.getElementById("exerciceResultat");
+    resultatDiv.innerHTML = "";
+    
+    // Ajouter le tableau à la zone de résultat
+    resultatDiv.appendChild(table);
+    
+    // Ajouter une explication simple du code
+    let explication = document.createElement("p");
+    explication.innerHTML = "Explication : Ce code découpe le texte en mots avec split(\" \"), puis utilise forEach pour créer une ligne de tableau pour chaque mot.";
+    resultatDiv.appendChild(explication);
+}
