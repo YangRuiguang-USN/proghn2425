@@ -70,8 +70,8 @@
     			<div id="exerciceResultat"></div>
 			</div>
 			
-			<div id="reader-file-section">
-                <h2 style="text-align:center;">Analyse des <span style="color:green">données</span> dans un fichier</h2>
+			<div id="container">
+                <h1 style="text-align:center;">Analyse des <span style="color:green">données</span> dans un fichier</h1>
 
                 <div id="page-wrapper">
                     <div>
@@ -83,9 +83,9 @@
                     <br />
                     <p style="text-align:center;">
                         <small>
-                            <label for="delimID" class="mylabel">Délimiteur(s)</label>
+                            <label for="delimID" class="mylabel">Délimiteur</label>
                             &nbsp;
-                            <input type="text" value=" ,;''~|&#@=`-.?!%*$()[]{}_:+«»§\/" name="delim" id="delimID" size="40" />
+                            <input type="text" value="," name="delim" id="delimID" size="40" />
                         </small>
                         <br />
                         <small>
@@ -104,7 +104,7 @@
                         <button onclick="alert('bonjour');"><span>Bonjour</span></button>
                         <br />
                         <br />
-                        <button class="submit" id="segmentationButton" onclick="segmentation()"><span>Segmentation</span></button>
+                        <button class="submit" onclick="segmentation();"><span>Segmentation</span></button>
                         <button class="submit" onclick="alert('Je ne fais rien, changez-moi !');"><span>action 1</span></button>
                         <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 2</span></button>
                         <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 3</span></button>
@@ -116,7 +116,7 @@
                 <div id="logger" style="width:100%"></div>
                 <br />
                 <div id="Global">
-                    <div id="fileDisplayAreaReader"></div>
+                    <div id="fileContent"></div>
                     <div id="page-analysis"></div>
                 </div>
             </div>
