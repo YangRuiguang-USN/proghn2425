@@ -1,129 +1,141 @@
 <!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Page Personnelle - YANG Ruiguang</title>
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/script.js"></script>
-    </head>
-    <body>
-    	<div id="page">
+<html>
+      <head>
+         <link rel="stylesheet" href="assets/css/style.css" >
+         <title>Programmation pour les humanités numériques</title>
+         <script src="assets/JS/javascript.js"></script>
+         <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+      </head>
+      <body>
+         <div id="page">
+            <!-- Pour les informations personnelles -->
             <div class="entete">
-				<h1>YANG Ruiguang</h1>
-				<h2>Master 1 en Science du Langage</h2>
-				<img src="assets/img/sorbonne-logo.png" width="20%" alt="Logo de l'Université Sorbonne Nouvelle" />
-				<img src="assets/img/photo.png" width="10%" alt="Ma photo personnelle" />
-			</div>
-			
-			<div id="aboutme">
-				<div class="column">
-					<p>Mon CV des trois dernières années :</p>
-					<table border="1px">
-			 			<thead>
-        					<tr><th>année universitaire</th><th>Statut</th></tr>
-        				</thead>
-    					<tbody>
-        					<tr><td>2024-2025</td><td>Master1 en SDL à l'Université Sorbonne Nouvelle</td></tr>
-                			<tr><td>2023-2024</td><td>DU d'Etudes Françaises à l'Université Paul-Valery Montpellier III</td></tr>
-                			<tr><td>2022-2023</td><td>Licence ès lettres à l'Université de Shanxi</td></tr>
-    					</tbody>
-					</table>
-					<br>
-				</div>
-				
-				<div class="column">
-					<p>Voici les cinq derniers livres que j'ai lu :</p>
-					<ol>
-						<li><i>Introduction à la stylistique</i>, Cogard Karl</li>
-            			<li><i>Histoire des stylistiques</i>, Karabétian Étienne</li>
-           				<li><i>La stylistique</i>, Molinié George</li>
-            			<li><i>Le discours littéraire: paratopie et scène d'énonciation</i>, Maingueneau Dominique</li>
-            			<li><i>How to do things with words</i>, Austin</li>
-        			</ol>
-        		</div>
-        	</div>
-        	
-        	<form>
-                <label for="bonjour-form-nom">Comment vous appelez-vous ?</label>
-                <input id="bonjour-form-nom" type="text" placeholder="Votre nom svp" />
-                <input type="submit" value="Bonjour..." onclick="demanderNom(); return false;" />
-            </form>
-            
-            <div id="help">
-                <button id="help-button" onclick="ShowHideHelp()">Afficher l'aide</button>
-                <div id="help-placeholder"></div>
+               <img src="assets/img/logo.png"/>
+               <h1><strong>Hongyu Cheng & Ruiguang Yang</strong></h1>
+               <h2><strong>UFR LLD Master 1 </strong><i>Sciences du Langage</i></h2>
+               <img src="assets/img/photo1.png"/>
+               <img src="assets/img/photo2.png"/>
             </div>
-            
-            <form>
-                <label for="fileInput" class="btn"><small>Sélectionner un fichier au format .txt :</small></label>
-                <input id="fileInput" type="file" accept=".txt" name="Fichier (.txt)" onchange="lireFichier()" />
-            </form>
-            <div id="fileDisplayArea"></div>
-            
-            <div class="exercice-section">
-    			<h3>Exercice - Segmentation de texte</h3>
-    			<p>Entrez un texte qui sera découpé en mots :</p>
-    			<textarea id="texteExercice" rows="5" cols="50">Ceci est un exemple de texte à découper en mots.</textarea>
-    			<br>
-    			<button onclick="exercice()">Créer le tableau de mots</button>
-    			<div id="exerciceResultat"></div>
-			</div>
-			
-			<div id="container">
-                <h1 style="text-align:center;">Analyse des <span style="color:green">données</span> dans un fichier</h1>
-
-                <div id="page-wrapper">
-                    <div>
-                        <span>
-                            <label for="fileInputReader" class="btn"><small>Sélectionner un fichier au format .txt :</small></label>
-                            <input id="fileInputReader" type="file" accept="text/plain" name="Fichier (.txt)" />
-                        </span>
-                    </div>
-                    <br />
-                    <p style="text-align:center;">
-                        <small>
-                            <label for="delimID" class="mylabel">Délimiteur</label>
-                            &nbsp;
-                            <input type="text" value="," name="delim" id="delimID" size="40" />
-                        </small>
-                        <br />
-                        <small>
-                            <label for="poleID" class="mylabel">Pôle</label>
-                            &nbsp;
-                            <input type="text" placeholder="entrez un pôle..." name="pole" id="poleID" size="20" />
-                        </small>
-                        &nbsp;
-                        <small>
-                            <label for="lgID" class="mylabel">Longueur</label>
-                            &nbsp;
-                            <input type="text" value="10" name="lg" id="lgID" size="10" />
-                        </small>
-                        <br />
-                        <br />
-                        <button onclick="alert('bonjour');"><span>Bonjour</span></button>
-                        <br />
-                        <br />
-                        <button class="submit" onclick="segmentation();"><span>Segmentation</span></button>
-                        <button class="submit" onclick="alert('Je ne fais rien, changez-moi !');"><span>action 1</span></button>
-                        <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 2</span></button>
-                        <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 3</span></button>
-                        <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 4</span></button>
-                        <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 5</span></button>
-                        <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 6</span></button>
-                    </p>
+            <!-- Pour afficher/masquer les informations personnelles -->
+            <center>
+                <button id="button_aboutme" class="fade" onclick="showHide_aboutme()">À propos de nous</button>
+            </center>
+            <br><br>
+            <!-- Section CV masquée par défaut (display: none) -->
+            <div id="aboutme" style="display: none;">
+               <p>Notre CV des trois dernières années :</p>
+                  <table>
+                     <thead>
+                        <tr><th>Année Universitaire</th><th>Statut de Cheng</th><th>Statut de Yang</th></tr>
+                     </thead>
+                     <tbody>
+                        <tr><td>2024-2025</td><td>Master 1</td><td>Master 1</td></tr>
+                        <tr><td>2023-2024</td><td>Apprentissage</td><td>DU d'Etudes Françaises à l'Université Paul-Valery Montpellier III</td></tr>
+                        <tr><td>2022-2023</td><td>Année de césure</td><td>Licence ès lettres à l'Université de Shanxi</td></tr>
+                      </tbody>
+                  </table>
+               <p>Nos cinq dernières lectures :</p>
+               <!-- Liste ordonnée des lectures avec chiffres romains -->
+               <ol>
+                  <li>« <i>Espaces mentaux : aspects de la construction du sens</i> », Gilles Fauconnier.</li>
+                  <li>« <i>Images de soi dans le discours</i> », Collectif. </li>
+                  <li>« <i>La coréférence : syntaxe ou sémantique ?</i> », Gilles Fauconnier.</li>
+                  <li>« <i>Langues et cognition</i> », Traité des sciences cognitives.</li>
+                  <li>« <i>Les Fleurs du Mal</i> », Charles Baudelaire.</li>
+               </ol>
+            </div>
+            <!-- Pour la page de l'analyse -->
+            <div class="input">
+               <span class="nom">Comment vous appelez-vous ?</span>
+               <input type="text" id="nomInput" placeholder="votre nom">
+               <button onclick="bonjour()">Bonjour</button>
+            </div>
+            <!-- Pour les outils d'analyse de texte -->
+            <div id="container"> 
+            <h1 style="text-align:center;">Analyse des <span style="color:green">données</span> dans un fichier</h1>
+            <button onclick="toggleHelp()" id="aideButton">Afficher l'aide</button>
+            <div id="helpText" style="display: none;">
+               <p><i><strong>Voici un mode d'emploi :</strong></i></p>
+               <ul>
+                    <li>Étape 1 : Chargez un texte au format .txt à l'aide du bouton Parcourir.</li>
+                    <li>Étape 2 (facultatif) : Préciser les délimiteurs de votre choix puis cliquez sur le bouton Segmentation.</li>
+                    <li>Le bouton Dictionnaire : permet d'obtenir un tableau qui classe les tokens de façon décroissante en fonction du nombre d'occurences.</li>
+                    <li>Le bouton GREP : Entrez un pôle (une regex ou un mot) puis cliquez sur GREP pour obtenir le tableau des lignes d'occurences.</li>
+                    <li>Le bouton Concordancier : Entrez un pôle (une regex ou un mot) et une longeur de contexte puis cliquez sur Concordancier pour obtenir un tableau avec le contexte gauche et droit du pôle recherché.</li>
+                    <li>Le bouton Nombre de phrases : cliquez et il affichera le nombre de phrases.</li>
+                    <li>Le bouton Mots les plus longs : cliquez et il affichera les 10 mots les plus longs du texte.</li>
+                    <li>Le bouton Pie Chart : Saisissez des stopwords et cliquez sur le bouton pour afficher un graphique des 30 mots les plus fréquents dans le texte hors stopwords.</li>
+                    <li>Le bouton /kujuj/ : don't mind me...</li>
+                </ul>
+            </div>
+            <!-- Pour le chargement et l'analyse de fichiers -->
+            <div id="fileAnalysisSection"> 
+                <div>
+                    <span>
+                        <label for="fileInput" class="btn"><small>Sélectionner un fichier au format .txt
+                                :</small></label>
+                        <input id="fileInput" type="file" accept="text/plain" name="Fichier (.txt)" />
+                    </span>
                 </div>
-                <div id="logger" style="width:100%"></div>
                 <br />
-                <div id="Global">
-                    <div id="fileContent"></div>
-                    <div id="page-analysis"></div>
-                </div>
+                <!-- Formulaire de paramètres pour l'analyse de texte -->
+                <p style="text-align:center;">
+                    <small>
+                        <label for="delimID" class="mylabel">Délimiteur(s)</label>
+                        &nbsp;
+                        <input type="text" value=" ,;’'~|&#@=`-.?!%*$()[]{}_:+«»§\/" name="delim" id="delimID" size="40" />
+                    </small>
+                    <br />
+                    <small>
+                        <label for="poleID" class="mylabel">Pôle</label>
+                        &nbsp;
+                        <input type="text" placeholder="entrez un pôle..." name="pole" id="poleID" size="20" />
+                    </small>
+                    &nbsp;
+                    <small>
+                        <label for="lgID" class="mylabel">Longueur</label>
+                        &nbsp;
+                        <input type="text" value="10" name="lg" id="lgID" size="10" />
+                    </small>
+                    <small>
+                        <label for="stopwordID" class="mylabel">stopwords</label>
+                        &nbsp;
+                        <input type="text" value="de,le,la,les,à,et,des,un,une,du,que,en,l,que,qu,d,s,se,ne,n,ce,me,sa" 
+                                name="stopwords" id="stopwordID" size="60" />
+                    </small>
+                    <br />
+                    <br />
+                    <!-- Pour afficher l'heure et mettre en majuscules -->
+                    <button id='timeButton' onclick="showDateHeure()"><span>Afficher le temps</span></button><button onclick="maj()">Mettre en majuscules</button>
+                    <div id="dateHeureDisplay"></div>
+                    <br />
+                    <br />
+                    <!-- Pour les différentes fonctions d'analyse de texte -->
+                    <button class="submit" onclick="segmentation()"><span>Segmentation</span></button>
+                    <button class="purple" onclick="dictionnaire()"><span>Dictionnaire</span></button>
+                    <button class="fade1" onclick="grep()"><span>GREP</span></button>
+                    <button class="fade2" onclick="concord()"><span>Concord</span></button>
+                    <button class="fade3" onclick="kujuj()"><span>/kujuj/</span></button>
+                    <button class="fade4" onclick="nbPhrases()"><span>Nombre de phrases</span></button>
+                    <button class="fade5" onclick="tokenLong()">Mots les plus longs</button>
+                    <button class="fade6" onclick="pieChart()"><span>grapheCamembert-Pie Chart</span></button>
+                </p>
             </div>
-        	
-			<footer>
-  				<p><a href="http://www.univ-paris3.fr/">Lien vers le site de Sorbonne Nouvelle.</a></p>
-			</footer>
-		</div>
-    </body>
+            <!-- Pour l'affichage des messages (succès, erreurs) -->
+            <div id="logger" style="width:100%"></div>
+            <br />
+            <!-- Pour l'affichage des résultats d'analyse -->
+            <div id="Global">
+                <div id="fileDisplayArea"></div>
+                <div id="page-analysis"></div>
+                <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+            </div>
+            </div>
+            <!-- Pour le lien vers le site universitaire -->
+            <footer class="simple">
+               <a href="http://www.univ-paris3.fr/">Liens vers le site de Sorbonne Nouvelle</a>
+            </footer>
+         </div>
+      </body>
 </html>
